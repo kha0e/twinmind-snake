@@ -1,0 +1,31 @@
+{
+  "name": "twinmind-snake-server",
+  "version": "0.1.0",
+  "description": "Serveur autoritatif pour TwinMind Snake",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc -p .",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "ws": "^8.15.0",
+    "uuid": "^9.0.0",
+    "dotenv": "^16.1.4"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.5",
+    "@types/node": "^18.18.3",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$"
+  }
+}
