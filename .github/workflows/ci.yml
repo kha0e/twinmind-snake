@@ -1,0 +1,35 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install server dependencies
+        working-directory: server
+        run: npm install
+      - name: Run server tests
+        working-directory: server
+        run: npm test --if-present
+      - name: Build server
+        working-directory: server
+        run: npm run build --if-present
+      - name: Install client dependencies
+        working-directory: client
+        run: npm install
+      - name: Run client tests
+        working-directory: client
+        run: npm test --if-present
+      - name: Build client
+        working-directory: client
+        run: npm run build --if-present
