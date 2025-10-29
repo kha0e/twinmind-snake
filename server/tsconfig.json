@@ -7,7 +7,9 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
-  "include": ["src/**/*"]
+  "include": ["src"],
+  "exclude": ["src/core/game.spec.ts"]
 }
