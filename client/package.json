@@ -1,0 +1,18 @@
+{
+  "name": "twinmind-snake-client",
+  "version": "0.1.0",
+  "description": "Client PixiJS pour TwinMind Snake",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pixi.js": "^7.3.1"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0",
+    "typescript": "^5.2.2",
+    "@types/node": "^18.18.3"
+  }
+}
