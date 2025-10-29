@@ -1,0 +1,24 @@
+# Exemple de configuration Render
+services:
+  - name: twinmind-snake-client
+    type: static
+    rootDir: client
+    buildCommand: npm --workspaces=false --prefix client install && npm --prefix client run build
+    staticPublishPath: client/dist
+    env:
+      - key: VITE_WS_URL
+        sync: false
+  - name: twinmind-snake-server
+    type: web
+    rootDir: server
+    buildCommand: npm --workspaces=false --prefix server install && npm --prefix server run build
+    startCommand: node dist/server.js
+    envVars:
+      - key: ROOM_TICK
+        value: '100'
+      - key: CONSENSUS_WINDOW_MS
+        value: '120'
+      - key: ROOM_CAPACITY
+        value: '2'
+      - key: PORT
+        value: '10000'
